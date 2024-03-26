@@ -1,0 +1,16 @@
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+
+<form method="POST" action="{{ form_action}}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.help_text }}
+                <p class="bg-danger">{{ field.errors }}</p>    
+            </div>
+        {% endfor %} 
+    </div>
+    <input type="submit" value="{{ button_value }}" class="w-25 btn btn-primary text-white"/>
+</form>

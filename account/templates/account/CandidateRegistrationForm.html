@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Candidate Registration</h2>
+    <div class="card card-dark">
+      <div class="card-header">
+          <h3 class="card-title">{{page_title}}</h3>
+      </div>
+      {% include "core/base_form.html" with messages=messages form_action='.'  form=form button_value='Submit Form' %}
+  </div>
+
+  </div>
+{% endblock content %}

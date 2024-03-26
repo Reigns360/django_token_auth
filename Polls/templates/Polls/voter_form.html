@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center;">Add new voter</h1>
+    <form method="POST" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
+        {% csrf_token %}
+        
+        <!-- You can customize the style of the form fields as needed -->
+        {{ form.as_p|safe }}
+
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Save</button>
+    </form>
+</div>
+{% endblock content %}
